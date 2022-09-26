@@ -7,9 +7,7 @@ p {
   height: 100%;
   width: 100%;
   margin: auto;
-  /* image-rendering: auto; */
   flex-shrink: 1;
-  /* margin-right: 10px; */
 }
 
 .movie_container {
@@ -47,10 +45,7 @@ article {
   right: 1%;
   visibility: visible;
 }
-/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
-/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
 
-/*filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));*/
 
 .unfav_icon {
   position: absolute;
@@ -64,8 +59,7 @@ article {
   right: 1%;
   visibility: hidden;
 }
-/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
-/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+
 
 /* and orientation landscape? if they don't look ok */
 @media (min-width: 320px) and (max-width: 480px) {

@@ -18,6 +18,7 @@ class App extends React.Component {
     currentPage: 1,
     totalPages: 0,
     term: "",
+    titleNotFound: false,
   };
 
   componentDidMount() {
@@ -26,17 +27,32 @@ class App extends React.Component {
 
   onFormSubmit = async (searchTerm, page) => {
     this.setState({ isLoading: true });
+
     if (searchTerm !== this.state.term) {
       this.setState({ currentPage: 1, term: searchTerm });
     }
-    const data = await tmbd.search(searchTerm, page);
-    setTimeout(() => {
-      this.setState({
-        movies: data.results,
-        totalPages: data.total_pages,
-        isLoading: false,
-      });
-    }, 1); // To test the loader
+
+    try {
+      const data = await tmbd.search(searchTerm, page);
+      console.log(data);
+      if (data.results.length === 0) {
+        this.setState({ titleNotFound: true });
+      }
+
+      setTimeout(() => {
+        this.setState({
+          movies: data.results,
+          totalPages: data.total_pages,
+          isLoading: false,
+        });
+      }, 1);
+    } catch (error) {
+      console.log("Ups,something went wrong", error, "Please try again");
+      alert(
+        "Ups, something went wrong. Please refresh and try again. Maybe not an empty string. :P :)"
+      );
+    }
+    // SetTimeout is to test the loader, remove Timeout after
     if (this.state.favoriteMoviesOn) {
       this.setState({
         favoriteMoviesOn: false,
@@ -121,7 +137,13 @@ class App extends React.Component {
             onFormSubmit={this.onFormSubmit}
             movies={this.state.movies}
           />
-
+          <p
+            style={{
+              visibility: this.state.titleNotFound ? "visible" : "hidden",
+            }}
+          >
+            Title not found!
+          </p>
           <button
             onClick={this.toggleFavoriteMovies}
             disabled={this.state.moviesButton}

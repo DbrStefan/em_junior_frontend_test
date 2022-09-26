@@ -54,13 +54,7 @@ class SearchBar extends React.Component {
             alt="clear icon"
           />
         </form>
-        <p
-          style={{
-            visibility: this.props.movies.length === 0 ? "visible" : "hidden",
-          }}
-        >
-          Title not found!
-        </p>
+        
       </div>
     );
   }
