@@ -1,0 +1,110 @@
+p {
+  color: #fff;
+}
+
+.movie_container img {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  /* image-rendering: auto; */
+  flex-shrink: 1;
+  /* margin-right: 10px; */
+}
+
+.movie_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 450px;
+  object-fit: contain;
+  max-height: 650px;
+  position: relative;
+  overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10%;
+  padding: 0;
+  box-shadow: 0px 1px 1px 0px hsla(0, 0%, 0%, 0.14),
+    0px 2px 1px -1px hsla(0, 0%, 0%, 0.12), 0px 1px 3px 0px hsla(0, 0%, 0%, 0.2);
+  background-color: hsla(0, 100%, 100%, 0.07);
+}
+
+article {
+  height: 100%;
+  width: 100%;
+}
+
+.fav_icon {
+  position: absolute;
+  max-width: 35px;
+  max-height: 35px;
+  cursor: pointer;
+
+  filter: invert(68%) sepia(79%) saturate(1487%) hue-rotate(311deg)
+    brightness(96%) contrast(104%) drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+
+  top: 1%;
+  right: 1%;
+  visibility: visible;
+}
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+
+/*filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));*/
+
+.unfav_icon {
+  position: absolute;
+  max-width: 35px;
+  max-height: 35px;
+  cursor: pointer;
+
+  filter: invert(68%) sepia(79%) saturate(1487%) hue-rotate(311deg)
+    brightness(96%) contrast(104%) drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  top: 1%;
+  right: 1%;
+  visibility: hidden;
+}
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+
+/* and orientation landscape? if they don't look ok */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile devices? */
+  h4 {
+    font-size: 10px;
+  }
+  .fav_icon {
+    max-width: 25px;
+    max-height: 25px;
+    top: 1px;
+  }
+  .unfav_icon {
+    max-width: 25px;
+    max-height: 25px;
+    top: 1%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ipad? */
+  .fav_icon {
+    top: 1%;
+  }
+  .unfav_icon {
+    top: 1%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Small screens, laptops? */
+  .fav_icon {
+    top: 1%;
+  }
+  .unfav_icon {
+    top: 1%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Desktops, large screens? */
+}

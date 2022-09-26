@@ -1,0 +1,56 @@
+.movie_list {
+  display: grid;
+  place-items: center;
+  align-items: stretch;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 1%
+  
+}
+
+@media  (max-width: 319px) {
+  .movie_list {
+    grid-template-columns: 1fr;
+  }
+  /* Mobile devices? */
+}
+
+/* and orientation landscape? if they don't look ok */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile devices? */
+  .movie_list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ipad? */
+  .movie_list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Small screens, laptops? */
+  .movie_list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Desktops, large screens? */
+  .movie_list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .movie_list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 2000px) {
+  .movie_list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}

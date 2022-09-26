@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  font: inherit;
+}
+
+html {
+  width: 100%;
+  height: auto;
+  background: #141414;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  background: #141414;
+  color: white;
+
+  font-family: Helvetica, Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+
+  padding: 1%;
+}
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+/* MAKE THE BUTTONS AND ICONS RESPONSIVE FOR MOBILE */
+
+.button {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(230, 230, 230);
+  color: rgb(230, 230, 230);
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 45px;
+  margin: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #5e5e5e;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  border: 1px solid salmon;
+
+}
+
+button:disabled {
+  color: salmon;
+  border: 1px solid salmon;
+}
+
+/* and orientation landscape? if they don't look ok */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Mobile devices? */
+  .button {
+    padding: 5px 25px;
+    margin: 10px;
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Ipad? */
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Small screens, laptops? */
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  /* Desktops, large screens? */
+}
+
+@media (min-width: 1200px) {
+}
