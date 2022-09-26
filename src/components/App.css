@@ -33,7 +33,7 @@ html {
 
 .button {
   position: relative;
-  overflow: hidden;
+  width: 200px;
   border: 1px solid rgb(230, 230, 230);
   color: rgb(230, 230, 230);
   display: inline-block;
@@ -46,12 +46,10 @@ html {
   background: #5e5e5e;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 button:hover {
   border: 1px solid salmon;
-
 }
 
 button:disabled {
@@ -63,6 +61,7 @@ button:disabled {
 @media (min-width: 320px) and (max-width: 480px) {
   /* Mobile devices? */
   .button {
+    width: 130px;
     padding: 5px 25px;
     margin: 10px;
     font-size: 10px;

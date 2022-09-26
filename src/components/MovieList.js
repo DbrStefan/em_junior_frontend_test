@@ -14,7 +14,6 @@ const MovieList = (props) => {
       />
     );
   });
-  // console.log("here second", props.favMovies);
   const renderFavoritesList = props.favMovies.map((movie) => {
     return (
       <MovieItem

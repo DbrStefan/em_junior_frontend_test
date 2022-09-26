@@ -7,8 +7,6 @@ import Pagination from "./Pagination";
 import tmbd from "../apis/tmdb";
 import "./App.css";
 
-// console.log(tmbd.search('star wars'));
-
 class App extends React.Component {
   state = {
     movies: [],
@@ -27,7 +25,6 @@ class App extends React.Component {
   }
 
   onFormSubmit = async (searchTerm, page) => {
-    // console.log('here second --- > current page', this.state.currentPage);
     this.setState({ isLoading: true });
     if (searchTerm !== this.state.term) {
       this.setState({ currentPage: 1, term: searchTerm });
@@ -39,7 +36,7 @@ class App extends React.Component {
         totalPages: data.total_pages,
         isLoading: false,
       });
-    }, 1000); // To test the loader
+    }, 1); // To test the loader
     if (this.state.favoriteMoviesOn) {
       this.setState({
         favoriteMoviesOn: false,
@@ -47,7 +44,6 @@ class App extends React.Component {
         moviesButton: true,
       });
     }
-    console.log(data);
   };
 
   addToFavorites = (movie) => {
@@ -55,9 +51,8 @@ class App extends React.Component {
       this.setState({ favMovies: [...this.state.favMovies, movie] });
     } else {
       let i = 0;
-      // console.log(this.state.favMovies);
+
       do {
-        // console.log(movie.id, "===", this.state.favMovies[i].id);
         if (movie.id !== this.state.favMovies[i].id) {
           this.setState({ favMovies: [...this.state.favMovies, movie] });
         }
@@ -68,18 +63,15 @@ class App extends React.Component {
 
   removeFromFavorites = (movie) => {
     let idx = 0;
-    // console.log(this.state.favMovies);
     for (let i = 0; i < this.state.favMovies.length; i++) {
       if (movie.id === this.state.favMovies[i].id) {
         idx = i;
       }
     }
-
     if (idx !== -1) {
       const filteredArr = this.state.favMovies.filter((_, i) => {
         return i !== idx;
       });
-      console.log(filteredArr);
 
       this.setState({ favMovies: filteredArr });
     }
@@ -100,21 +92,17 @@ class App extends React.Component {
 
   toggleFavoriteMovies = () => {
     if (!this.state.favoriteMoviesOn) {
-      console.log("fav");
       this.setState({
         favoriteMoviesOn: true,
         favButton: true,
         moviesButton: false,
       });
-      console.log(this.state.favoriteMoviesOn);
     } else {
-      console.log("movies");
       this.setState({
         favoriteMoviesOn: false,
         favButton: false,
         moviesButton: true,
       });
-      console.log(this.state.favoriteMoviesOn);
     }
     // event.currentTarget.disabled = true
     // You still have to think some more for the logic of the second button
@@ -139,7 +127,7 @@ class App extends React.Component {
             disabled={this.state.moviesButton}
             className="button"
           >
-            Movie category
+            Movies
           </button>
           <button
             onClick={this.toggleFavoriteMovies}
@@ -150,7 +138,6 @@ class App extends React.Component {
           </button>
         </div>
 
-        {/* <div className="movies_list"> */}
         {this.state.isLoading ? (
           <LoadingSpinner />
         ) : (
@@ -163,7 +150,7 @@ class App extends React.Component {
             checkIfFavorite={this.checkIfFavorite}
           />
         )}
-        {/* </div> */}
+
         {this.state.totalPages > 1 && !this.state.favoriteMoviesOn ? (
           <Pagination
             pages={this.state.totalPages}

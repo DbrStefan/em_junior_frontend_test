@@ -8,7 +8,6 @@ class SearchBar extends React.Component {
     const element = document.querySelector(".clear_icon");
 
     this.setState({ searchTerm: e.target.value });
-    // console.log(this.state.searchTerm);
     if (this.state.searchTerm !== "") {
       element.style.visibility = "visible";
     } else if (e.target.value === "") {
@@ -18,11 +17,8 @@ class SearchBar extends React.Component {
 
   onFormSubmit = (event) => {
     event.preventDefault();
-    //Refactor this shit,
+
     const element = document.querySelector(".clear_icon");
-
-    // Call callback from app to pass the searchTerm back to App component to use with the api
-
     this.props.onFormSubmit(this.state.searchTerm);
     this.setState({ searchTerm: "" });
     element.style.visibility = "hidden";
@@ -30,7 +26,6 @@ class SearchBar extends React.Component {
 
   clearSearchTerm = () => {
     const element = document.querySelector(".clear_icon");
-
     this.setState({ searchTerm: "" });
     element.style.visibility = "hidden";
   };
